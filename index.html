@@ -1,1 +1,56 @@
-<html><head><title>text-reader-edge</title></head><body><h1>text-reader-edge</h1><p>Replace this HTML with your app</p></body></html>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Text Display</title>
+    <style>
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            padding: 20px;
+        }
+        input {
+            width: 300px;
+            padding: 6px;
+        }
+        button {
+            margin-left: 5px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="textInput" placeholder="متن را وارد کنید">
+
+    <button onclick="showText()">نمایش متن (LTR)</button>
+    <button onclick="showTextRTL()">نمایش متن (RTL)</button>
+
+    <div id="output" class="output"></div>
+
+    <script>
+        function showText() {
+            const text = document.getElementById("textInput").value;
+            const output = document.getElementById("output");
+            output.innerText = text;
+            output.style.direction = "ltr";
+            output.style.textAlign = "left";
+        }
+
+        function showTextRTL() {
+            const text = document.getElementById("textInput").value;
+            const output = document.getElementById("output");
+            output.innerText = text;
+            output.style.direction = "rtl";
+            output.style.textAlign = "right";
+        }
+    </script>
+
+</body>
+</html>
